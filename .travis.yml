@@ -17,6 +17,6 @@ add-ons:
     packages:
       - g++-4.8
 before_script:
-  - npm install -g grunt
+  - npm install -g grunt grunt-cli
 script:
   - grunt
