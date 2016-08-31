@@ -1,5 +1,6 @@
 #! /bin/bash
 
+# creating shippable.yml
 echo "# language setting" >> shippable.yml
 echo "language: node_js" >> shippable.yml
 echo "" >> shippable.yml
@@ -32,6 +33,9 @@ echo "script:" >> shippable.yml
 echo " - grunt" >> shippable.yml
 echo " - ls -a" >> shippable.yml
 echo " - pwd" >> shippable.yml
+
+git add shippable.yml
+git commit -am 'building master'
 
 git push
 
