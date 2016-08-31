@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo 'tyler can win'"
+    "debug": "node debug app.js",
+    "start": "nodemon app.js",
+    "test": "mocha test/bootstrap.test.js test/**/*.test.js"
   },
   "repository": {
     "type": "git",

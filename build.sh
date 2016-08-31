@@ -31,7 +31,7 @@ echo "" >> shippable.yml
 echo "script:" >> shippable.yml
 echo " - grunt" >> shippable.yml
 echo " - grunt" >> shippable.yml
-echo " - node app.js" >> shippable.yml
+echo " - npm test" >> shippable.yml
 
 cp shippable.yml test.yml
 
