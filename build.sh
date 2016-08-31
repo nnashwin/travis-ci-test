@@ -29,8 +29,6 @@ echo " - npm install -g grunt-cli grunt" >> shippable.yml
 echo "" >> shippable.yml
 
 echo "script:" >> shippable.yml
-echo " - grunt" >> shippable.yml
-echo " - grunt" >> shippable.yml
 echo " - npm test" >> shippable.yml
 
 cp shippable.yml test.yml

@@ -21,6 +21,4 @@ before_script:
  - npm install -g grunt-cli grunt
 
 script:
- - grunt
- - grunt
  - npm test
