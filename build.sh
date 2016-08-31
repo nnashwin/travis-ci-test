@@ -8,7 +8,7 @@ echo "build_image: drydock/u12nod:prod" >> shippable.yml
 
 echo "# Version number" >> shippable.yml
 echo "node_js:" >> shippable.yml
-echo " - "4.2.3"" >> shippable.yml
+echo " - "5"" >> shippable.yml
 
 echo "# Path to output test report" >> shippable.yml
 echo "env:" >> shippable.yml
@@ -16,7 +16,7 @@ echo " - XUNIT_FILE=shippable/testresults/result.xml" >> shippable.yml
 echo "" >> shippable.yml
 
 echo "install:" >> shippable.yml
-echo " - source ~/.nvm/nvm.sh && nvm install 4.2.3" >> shippable.yml
+echo " - source ~/.nvm/nvm.sh && nvm install 5" >> shippable.yml
 echo " - node --version" >> shippable.yml
 echo " - npm install" >> shippable.yml
 echo "" >> shippable.yml

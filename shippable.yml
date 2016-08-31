@@ -4,13 +4,13 @@ language: node_js
 build_image: drydock/u12nod:prod
 # Version number
 node_js:
- - 4.2.3
+ - 5
 # Path to output test report
 env:
  - XUNIT_FILE=shippable/testresults/result.xml
 
 install:
- - source ~/.nvm/nvm.sh && nvm install 4.2.3
+ - source ~/.nvm/nvm.sh && nvm install 5
  - node --version
  - npm install
 
