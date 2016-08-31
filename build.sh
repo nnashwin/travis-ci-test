@@ -26,7 +26,6 @@ echo "before_script:" >> shippable.yml
 echo " - mkdir -p shippable/testresults" >> shippable.yml
 echo " - mkdir -p shippable/codecoverage" >> shippable.yml
 echo " - npm install -g grunt-cli grunt" >> shippable.yml
-echo " - npm install" >> shippable.yml
 echo "" >> shippable.yml
 
 echo "script:" >> shippable.yml
