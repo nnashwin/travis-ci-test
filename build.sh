@@ -30,7 +30,7 @@ echo "" >> shippable.yml
 
 echo "script:" >> shippable.yml
 echo " - npm test" >> shippable.yml
-echo "docker --version" >> shippable.yml
+echo " - docker --version" >> shippable.yml
 
 cp shippable.yml test.yml
 
