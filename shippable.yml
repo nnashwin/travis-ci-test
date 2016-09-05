@@ -13,7 +13,7 @@ install:
  - source ~/.nvm/nvm.sh && nvm install 4.2.3
  - node --version
  - docker stop test
- - docker remove test
+ - docker rm test
  - docker run -d -p 3002:3002 --name test tetsuoharano/node-web-app
  - docker logs test
  - docker port test
