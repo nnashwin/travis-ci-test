@@ -18,6 +18,12 @@ echo "" >> shippable.yml
 echo "install:" >> shippable.yml
 echo " - source ~/.nvm/nvm.sh && nvm install 4.2.3" >> shippable.yml
 echo " - node --version" >> shippable.yml
+echo " - npm config set registry http://registry.npmjs.org/" >> shippable.yml
+echo " - docker pull tetsuoharano/snapaskoceanapi-newhome:1.0" >> shippable.yml
+echo " - docker stop apiServer" >> shippable.yml
+echo " - docker rm apiServer" >> shippable.yml
+echo " - docker run -d -p 3001:3001 --name apiServer tetsuoharano/snapaskoceanapi-newhome:1.0" >> shippable.yml
+echo " - curl 127.0.0.1:3001" >> shippable.yml
 echo " - npm install" >> shippable.yml
 echo "" >> shippable.yml
 
@@ -29,15 +35,17 @@ echo " - npm install -g grunt-cli grunt" >> shippable.yml
 echo "" >> shippable.yml
 
 echo "script:" >> shippable.yml
-echo " - npm test" >> shippable.yml
-echo " - docker --version" >> shippable.yml
+echo " - npm run testall" >> shippable.yml
+echo " - docker logs apiServer" >> shippable.yml
+echo " - docker port apiServer" >> shippable.yml
+echo " - docker-machine ls" >> shippable.yml
 
 cp shippable.yml test.yml
 
 git add shippable.yml
 git commit -am 'building master'
 
-git push
+git push upstream master
 
 rm -rf shippable.yml
 
