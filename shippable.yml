@@ -17,6 +17,7 @@ install:
  - docker run -d -p 3002:3002 --name test tetsuoharano/node-web-app
  - docker logs test
  - docker port test
+ - ifconfig
  - curl 127.0.0.1:3002
  - curl localhost:3002
 
