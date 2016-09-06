@@ -31,7 +31,7 @@ echo " - npm install -g grunt-cli grunt" >> shippable.yml
 echo "" >> shippable.yml
 
 echo "script:" >> shippable.yml
-echo " - docker attach apiServer"
+echo " - docker attach apiServer" >> shippable.yml
 echo " - npm run testall" >> shippable.yml
 echo " - docker logs apiServer" >> shippable.yml
 echo " - docker port apiServer" >> shippable.yml

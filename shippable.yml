@@ -23,6 +23,7 @@ before_script:
  - npm install -g grunt-cli grunt
 
 script:
+ - docker attach apiServer
  - npm run testall
  - docker logs apiServer
  - docker port apiServer
