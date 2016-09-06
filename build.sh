@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # creating shippable.yml
-echo "# language setting" >> shippable.yml
+echo "# language setting" > shippable.yml
 echo "language: node_js" >> shippable.yml
 echo "" >> shippable.yml
 echo "build_image: drydock/u12nod:prod" >> shippable.yml
