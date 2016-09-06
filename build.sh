@@ -18,6 +18,7 @@ echo "" >> shippable.yml
 echo "install:" >> shippable.yml
 echo " - source ~/.nvm/nvm.sh && nvm install 4.2.3" >> shippable.yml
 echo " - node --version" >> shippable.yml
+echo " - ifconfig docker0" >> shippable.yml
 echo " - npm config set registry http://registry.npmjs.org/" >> shippable.yml
 echo " - docker stop apiServer" >> shippable.yml
 echo " - docker rm apiServer" >> shippable.yml

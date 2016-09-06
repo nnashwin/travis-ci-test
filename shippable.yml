@@ -12,6 +12,7 @@ env:
 install:
  - source ~/.nvm/nvm.sh && nvm install 4.2.3
  - node --version
+ - ifconfig docker0
  - npm config set registry http://registry.npmjs.org/
  - docker stop apiServer
  - docker rm apiServer
