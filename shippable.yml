@@ -9,7 +9,6 @@ env:
  - XUNIT_FILE=shippable/testresults/result.xml
 
 install:
- - apt-get install -y net-tools
  - docker info
  - node --version
  - npm config set registry http://registry.npmjs.org/
@@ -22,7 +21,6 @@ before_script:
  - npm install -g grunt-cli grunt
 
 script:
- - ifconfig docker0
  - npm run testall
  - docker logs apiServer
  - docker port apiServer
