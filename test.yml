@@ -2,8 +2,8 @@
 language: node_js
 
 build_image: drydock/u12nod:prod
- - net: host
- - privileged: true
+ net: host
+ privileged: true
 # Version number
 node_js:
  - 4.2.3
