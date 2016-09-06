@@ -36,7 +36,7 @@ echo " - docker ps -l" >> shippable.yml
 echo " - docker logs apiServer" >> shippable.yml
 echo " - docker port apiServer" >> shippable.yml
 echo " - docker-machine ls" >> shippable.yml
-#echo " - curl 127.0.0.1:3002" >> shippable.yml
+echo " - curl 127.0.0.1:3002" >> shippable.yml
 
 
 cp shippable.yml test.yml

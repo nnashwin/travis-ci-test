@@ -27,3 +27,4 @@ script:
  - docker logs apiServer
  - docker port apiServer
  - docker-machine ls
+ - curl 127.0.0.1:3002
