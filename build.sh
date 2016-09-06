@@ -4,7 +4,6 @@
 echo "# language setting" > shippable.yml
 echo "language: node_js" >> shippable.yml
 echo "" >> shippable.yml
-echo "build_image: drydock/u12nod:prod" >> shippable.yml
 
 echo "# Version number" >> shippable.yml
 echo "node_js:" >> shippable.yml
@@ -18,7 +17,6 @@ echo "" >> shippable.yml
 echo "install:" >> shippable.yml
 echo " - apt-get install -y net-tools" >> shippable.yml
 echo " - ifconfig docker0" >> shippable.yml
-echo " - source ~/.nvm/nvm.sh && nvm install 4.2.3" >> shippable.yml
 echo " - node --version" >> shippable.yml
 echo " - ifconfig docker0" >> shippable.yml
 echo " - npm config set registry http://registry.npmjs.org/" >> shippable.yml
