@@ -23,9 +23,7 @@ before_script:
  - npm install -g grunt-cli grunt
 
 script:
- - docker attach apiServer
- - npm run testall
+ - docker ps -l
  - docker logs apiServer
  - docker port apiServer
  - docker-machine ls
- - curl 127.0.0.1:3002

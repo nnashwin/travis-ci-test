@@ -31,12 +31,12 @@ echo " - npm install -g grunt-cli grunt" >> shippable.yml
 echo "" >> shippable.yml
 
 echo "script:" >> shippable.yml
-echo " - docker attach apiServer" >> shippable.yml
-echo " - npm run testall" >> shippable.yml
+echo " - docker ps -l" >> shippable.yml
+#echo " - npm run testall" >> shippable.yml
 echo " - docker logs apiServer" >> shippable.yml
 echo " - docker port apiServer" >> shippable.yml
 echo " - docker-machine ls" >> shippable.yml
-echo " - curl 127.0.0.1:3002" >> shippable.yml
+#echo " - curl 127.0.0.1:3002" >> shippable.yml
 
 
 cp shippable.yml test.yml
