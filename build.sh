@@ -5,6 +5,10 @@ echo "# language setting" > shippable.yml
 echo "language: node_js" >> shippable.yml
 echo "" >> shippable.yml
 
+echo "build_image: drydock/u12nod:prod" >> shippable.yml
+echo " - net: host" >> shippable.yml
+echo " - privileged: true" >> shippable.yml
+
 echo "# Version number" >> shippable.yml
 echo "node_js:" >> shippable.yml
 echo " - "4.2.3"" >> shippable.yml
