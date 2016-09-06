@@ -16,6 +16,8 @@ echo " - XUNIT_FILE=shippable/testresults/result.xml" >> shippable.yml
 echo "" >> shippable.yml
 
 echo "install:" >> shippable.yml
+echo " - apt-get install -y net-tools" >> shippable.yml
+echo " - ifconfig docker0" >> shippable.yml
 echo " - source ~/.nvm/nvm.sh && nvm install 4.2.3" >> shippable.yml
 echo " - node --version" >> shippable.yml
 echo " - ifconfig docker0" >> shippable.yml

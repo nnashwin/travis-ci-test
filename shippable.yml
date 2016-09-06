@@ -10,6 +10,8 @@ env:
  - XUNIT_FILE=shippable/testresults/result.xml
 
 install:
+ - apt-get install -y net-tools
+ - ifconfig docker0
  - source ~/.nvm/nvm.sh && nvm install 4.2.3
  - node --version
  - ifconfig docker0
