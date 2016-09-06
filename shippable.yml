@@ -13,7 +13,7 @@ install:
  - source ~/.nvm/nvm.sh && nvm install 4.2.3
  - node --version
  - npm config set registry http://registry.npmjs.org/
- - docker run -d -p 3002:3002 --name apiServer tetsuoharano/node-web-app
+ - docker run -d -p 127.0.0.1:3002:3002 --name apiServer tetsuoharano/node-web-app
  - curl 127.0.0.1:3002
 
 # Create directories for test and coverage reports
