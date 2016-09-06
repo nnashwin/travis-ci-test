@@ -16,7 +16,7 @@ echo "" >> shippable.yml
 
 echo "install:" >> shippable.yml
 echo " - apt-get install -y net-tools" >> shippable.yml
-echo " - ifconfig docker0" >> shippable.yml
+echo " - docker info" >> shippable.yml
 echo " - node --version" >> shippable.yml
 echo " - ifconfig docker0" >> shippable.yml
 echo " - npm config set registry http://registry.npmjs.org/" >> shippable.yml

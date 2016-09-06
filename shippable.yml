@@ -10,7 +10,7 @@ env:
 
 install:
  - apt-get install -y net-tools
- - ifconfig docker0
+ - docker info
  - node --version
  - ifconfig docker0
  - npm config set registry http://registry.npmjs.org/
