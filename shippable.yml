@@ -13,8 +13,6 @@ install:
  - docker info
  - node --version
  - npm config set registry http://registry.npmjs.org/
- - docker stop apiServer
- - docker rm apiServer
  - docker run -d -p 127.0.0.1:3002:3002 --name apiServer tetsuoharano/node-web-app
 
 # Create directories for test and coverage reports
