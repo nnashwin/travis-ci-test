@@ -1,7 +1,12 @@
 # language setting
 language: node_js
 
-build_image: drydock/u12nod:prod
+build:
+  pre_ci_boot:
+    image_name: drydock/u14rub
+    image_tag: prod
+    pull: true
+    options: --privileged=true
 # Version number
 node_js:
  - 4.2.3
