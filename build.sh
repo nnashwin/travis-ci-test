@@ -36,7 +36,6 @@ echo " - npm install -g grunt-cli grunt" >> shippable.yml
 echo "" >> shippable.yml
 
 echo "script:" >> shippable.yml
-#echo " - npm run testall" >> shippable.yml
 echo " - docker logs apiServer" >> shippable.yml
 echo " - docker port apiServer" >> shippable.yml
 echo " - docker run -d -p 127.0.0.1:3004:3002 --name apiServer2 tetsuoharano/node-web-app" >> shippable.yml
