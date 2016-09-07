@@ -25,7 +25,6 @@ echo "install:" >> shippable.yml
 echo " - docker info" >> shippable.yml
 echo " - node --version" >> shippable.yml
 echo " - npm config set registry http://registry.npmjs.org/" >> shippable.yml
-echo " - docker run -d -p 127.1.1.1:3002:3002 --name apiServer tetsuoharano/node-web-app" >> shippable.yml
 echo "" >> shippable.yml
 
 echo "# Create directories for test and coverage reports" >> shippable.yml
@@ -36,6 +35,7 @@ echo " - npm install -g grunt-cli grunt" >> shippable.yml
 echo "" >> shippable.yml
 
 echo "script:" >> shippable.yml
+echo " - docker run -d -p 127.1.1.1:3002:3002 --name apiServer tetsuoharano/node-web-app" >> shippable.yml
 echo " - docker logs apiServer" >> shippable.yml
 echo " - docker port apiServer" >> shippable.yml
 echo " - docker run -d -p 127.0.0.1:3004:3002 --name apiServer2 tetsuoharano/node-web-app" >> shippable.yml

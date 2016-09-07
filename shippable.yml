@@ -18,18 +18,17 @@ install:
  - docker info
  - node --version
  - npm config set registry http://registry.npmjs.org/
- - docker run -d -p 127.1.1.1:3002:3002 --name apiServer tetsuoharano/node-web-app
 
 # Create directories for test and coverage reports
 before_script:
- - docker logs apiServer
- - docker port apiServer
- - docker run -d -p 127.0.0.1:3004:3002 --name apiServer2 tetsuoharano/node-web-app
- - docker ps -l
- - curl 127.1.1.1:3002
  - mkdir -p shippable/testresults
  - mkdir -p shippable/codecoverage
  - npm install -g grunt-cli grunt
 
 script:
- 
+ - docker run -d -p 127.1.1.1:3002:3002 --name apiServer tetsuoharano/node-web-app
+ - docker logs apiServer
+ - docker port apiServer
+ - docker run -d -p 127.0.0.1:3004:3002 --name apiServer2 tetsuoharano/node-web-app
+ - docker ps -l
+ - curl 127.1.1.1:3002
