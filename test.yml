@@ -1,0 +1,34 @@
+# language setting
+language: node_js
+
+build:
+  pre_ci_boot:
+    image_name: drydock/u14rub
+    image_tag: prod
+    pull: true
+    options: --privileged=true
+# Version number
+node_js:
+ - 4.2.3
+# Path to output test report
+env:
+ - XUNIT_FILE=shippable/testresults/result.xml
+
+install:
+ - docker info
+ - node --version
+ - npm config set registry http://registry.npmjs.org/
+
+# Create directories for test and coverage reports
+before_script:
+ - mkdir -p shippable/testresults
+ - mkdir -p shippable/codecoverage
+ - npm install -g grunt-cli grunt
+
+script:
+ - docker run -d -p 127.1.1.1:3002:3002 --name apiServer tetsuoharano/node-web-app
+ - docker logs apiServer
+ - docker port apiServer
+ - docker run -d -p 127.0.0.1:3004:3002 --name apiServer2 tetsuoharano/node-web-app
+ - docker ps -l
+ - curl 127.1.1.1:3002
