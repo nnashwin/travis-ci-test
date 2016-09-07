@@ -47,5 +47,3 @@ cp shippable.yml test.yml
 
 git add shippable.yml
 git commit -am 'building master'
-
-git push
