@@ -35,7 +35,8 @@ echo " - docker logs apiServer" >> shippable.yml
 echo " - docker port apiServer" >> shippable.yml
 echo " - docker run -d -p 127.0.0.1:3004:3002 --name apiServer2 tetsuoharano/node-web-app" >> shippable.yml
 echo " - docker ps -l" >> shippable.yml
-echo " - curl 127.1.1.1:3002" >> shippable.yml
+echo " - docker logs apiServer" >> shippable.yml
+# echo " - curl 127.1.1.1:3002" >> shippable.yml
 
 
 cp shippable.yml test.yml
