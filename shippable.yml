@@ -18,6 +18,7 @@ install:
 before_script:
  - mkdir -p shippable/testresults
  - mkdir -p shippable/codecoverage
+ - ping localhost
  - docker run -d -p 0.0.0.0:3002:3002 --name apiServer tetsuoharano/node-web-app
  - docker logs apiServer
  - docker port apiServer
