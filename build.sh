@@ -5,12 +5,7 @@ echo "# language setting" > shippable.yml
 echo "language: node_js" >> shippable.yml
 echo "" >> shippable.yml
 
-echo "build:" >> shippable.yml
-echo "  pre_ci_boot:" >> shippable.yml
-echo "    image_name: drydock/u14rub" >> shippable.yml
-echo "    image_tag: prod" >> shippable.yml
-echo "    pull: true" >> shippable.yml
-echo "    options: --privileged=true" >> shippable.yml
+echo "build_image: shippableimages/ubuntu1204_nodejs" >> shippable.yml
 
 echo "# Version number" >> shippable.yml
 echo "node_js:" >> shippable.yml

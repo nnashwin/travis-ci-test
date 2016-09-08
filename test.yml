@@ -1,12 +1,7 @@
 # language setting
 language: node_js
 
-build:
-  pre_ci_boot:
-    image_name: drydock/u14rub
-    image_tag: prod
-    pull: true
-    options: --privileged=true
+build_image: shippableimages/ubuntu1204_nodejs
 # Version number
 node_js:
  - 4.2.3
