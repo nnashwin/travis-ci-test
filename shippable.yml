@@ -18,11 +18,14 @@ install:
 before_script:
  - mkdir -p shippable/testresults
  - mkdir -p shippable/codecoverage
+ - docker run -d -p 127.1.1.1:3002:3002 --name apiServer tetsuoharano/node-web-app
+ - docker logs apiServer
+ - docker port apiServer
+ - docker ps -l
  - npm install -g grunt-cli grunt
 
 ci:
  - docker run -d -p 127.1.1.1:3002:3002 --name apiServer tetsuoharano/node-web-app
  - docker logs apiServer
  - docker port apiServer
- - docker run -d -p 127.0.0.1:3004:3002 --name apiServer2 tetsuoharano/node-web-app
  - docker ps -l
