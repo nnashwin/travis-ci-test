@@ -22,5 +22,4 @@ build:
   pre_ci:
     - node --version
   ci:
-    - npm install
     - ./bootstart.sh
