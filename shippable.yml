@@ -8,14 +8,12 @@ node_js:
 env:
  - XUNIT_FILE=shippable/testresults/result.xml
 
+integrations:
+  hub:
+    - integrationName: web-snapask
+      type: docker
+
 build:
-  integrations:
-    hub:
-      - integrationName: web-snapask
-        type: docker
-        branches:
-          only:
-            - master
   pre_ci_boot:
     image_name: tetsuoharano/web-snapask-main
     image_tag: latest
@@ -23,7 +21,6 @@ build:
     options: "-e HOME=/root"
   pre_ci:
     - node --version
-
   ci:
     - npm install
     - ./bootstart.sh
