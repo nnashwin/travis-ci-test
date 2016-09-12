@@ -9,12 +9,6 @@ env:
  - XUNIT_FILE=shippable/testresults/result.xml
 
 build:
-  pre_ci_boot:
-    image_name: tetsuoharano/web-snapask-main
-    image_tag: latest
-    pull: true
-    options: "-e HOME=/root"
-
   integrations:
     hub:
       - integrationName: web-snapask
@@ -22,9 +16,14 @@ build:
         branches:
           only:
             - master
-
+  pre_ci_boot:
+    image_name: tetsuoharano/web-snapask-main
+    image_tag: latest
+    pull: true
+    options: "-e HOME=/root"
   pre_ci:
     - node --version
 
   ci:
+    - npm install
     - ./bootstart.sh
