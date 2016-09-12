@@ -10,7 +10,6 @@ env:
  - XUNIT_FILE=shippable/testresults/result.xml
 
 install:
- - docker info
  - node --version
  - npm config set registry http://registry.npmjs.org/
 
@@ -18,8 +17,8 @@ install:
 before_script:
  - mkdir -p shippable/testresults
  - mkdir -p shippable/codecoverage
+ - npm start &
 
-ci:
- - npm start
+before_ci:
  - curl 127.0.0.1:3002
  - curl 127.0.0.1:3001
