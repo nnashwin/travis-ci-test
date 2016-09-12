@@ -1,18 +1,26 @@
-resources:
-  - name: Docker
-    type: image
-    integration: travis-ci-test
-    pointer:
-      sourceName: "tetsuoharano/node-web-app"
-      isPull: false
-    seed:
-      versionName: master.1
+# language setting
+language: node_js
 
-   - name: img-opts
-     type: dockerOptions
-     version:
-      memory: 128
-      cpuShares: 256
-      portMappings:
-        - 3002:3002
-      publishAllPorts: true
+build_image: shippableimages/ubuntu1204_nodejs
+# Version number
+node_js:
+ - 4.2.3
+# Path to output test report
+env:
+ - XUNIT_FILE=shippable/testresults/result.xml
+
+install:
+ - node --version
+ - npm config set registry http://registry.npmjs.org/
+ - npm install
+ - npm i -g forever
+
+# Create directories for test and coverage reports
+before_script:
+ - mkdir -p shippable/testresults
+ - mkdir -p shippable/codecoverage
+ - npm start &
+
+before_ci:
+ - curl 127.0.0.1:3002
+ - curl 127.0.0.1:3001

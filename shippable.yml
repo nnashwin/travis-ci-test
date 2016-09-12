@@ -1,7 +1,7 @@
 # language setting
 language: node_js
 
-build_image: shippableimages/ubuntu1204_nodejs
+build_image: drydock/u12nod:prod
 # Version number
 node_js:
  - 4.2.3
@@ -9,18 +9,28 @@ node_js:
 env:
  - XUNIT_FILE=shippable/testresults/result.xml
 
-install:
- - node --version
- - npm config set registry http://registry.npmjs.org/
- - npm install
- - npm i -g forever
+build:
+  pre_ci_boot:
+    image_name: tetsuoharano/web-snapask-main
+    image_tag: latest
+    pull: true
+    options: "-e HOME=/root"
 
-# Create directories for test and coverage reports
-before_script:
- - mkdir -p shippable/testresults
- - mkdir -p shippable/codecoverage
- - npm start &
+  integrations:
+    hub:
+      - integrationName: web-snapask
+        type: docker
+        branches:
+          only:
+            - master
 
-before_ci:
- - curl 127.0.0.1:3002
- - curl 127.0.0.1:3001
+  pre_ci:
+    - node --version
+
+  ci:
+    - ./bootstart.sh
+
+  cache: true
+
+  cache_dir_list:
+    - $SHIPPABLE_BUILD_DIR/node_modules 
