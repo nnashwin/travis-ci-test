@@ -22,4 +22,5 @@ build:
   pre_ci:
     - node --version
   ci:
+    - ls
     - ./bootstart.sh
