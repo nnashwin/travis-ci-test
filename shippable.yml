@@ -12,6 +12,7 @@ env:
 install:
  - node --version
  - npm config set registry http://registry.npmjs.org/
+ - npm install
 
 # Create directories for test and coverage reports
 before_script:
