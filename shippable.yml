@@ -16,6 +16,12 @@ integrations:
       branches:
         only:
           - master
+  hub:
+    - integrationName: web-snapask
+      type: docker
+      branches:
+      only:
+       - master
 
 build:
   pre_ci_boot:
