@@ -10,11 +10,6 @@ env:
 
 integrations:
   hub:
-    - integrationName: web-snapask
-      type: docker
-      branches:
-        only:
-          - master
     - integrationName: test-ecr
       type: ecr
       region: us-west-2
