@@ -16,7 +16,6 @@ integrations:
       branches:
         only:
           - master
-  hub:
     - integrationName: web-snapask
       type: docker
       branches:
