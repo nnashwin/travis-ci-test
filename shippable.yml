@@ -12,6 +12,15 @@ integrations:
   hub:
     - integrationName: web-snapask
       type: docker
+      branches:
+        only:
+          - master
+    - integrationName: test-ecr
+      type: ecr
+      region: us-west-2
+      branches:
+        only:
+          - master
 
 build:
   pre_ci_boot:
@@ -19,8 +28,19 @@ build:
     image_tag: latest
     pull: true
     options: "-e HOME=/root"
+
   pre_ci:
     - node --version
+
   ci:
-    - ls
     - ./bootstart.sh
+
+  on_success:
+    - docker build -t 408119555090.dkr.ecr.us-west-2.amazonaws.com/tetsuoharano/testecr:latest .
+    - docker push -t 408119555090.dkr.ecr.us-west-2.amazonaws.com/tetsuoharano/testecr:latest
+    - aws ecs stop-task --cluster default
+
+  cache: true
+
+  cache_dir_list:
+    - $SHIPPABLE_BUILD_DIR/node_modules 
