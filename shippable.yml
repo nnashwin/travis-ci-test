@@ -13,6 +13,7 @@ integrations:
     - integrationName: test-ecr
       type: ecr
       region: us-west-2
+      agent_only: true
       branches:
         only:
           - master
