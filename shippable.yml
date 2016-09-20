@@ -37,6 +37,7 @@ build:
     - ./bootstart.sh
 
   on_success:
+    - ls
     - docker build -t 408119555090.dkr.ecr.us-west-2.amazonaws.com/tetsuoharano/testecr:latest .
     - docker push -t 408119555090.dkr.ecr.us-west-2.amazonaws.com/tetsuoharano/testecr:latest
     - aws ecs stop-task --cluster default
